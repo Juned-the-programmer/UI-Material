@@ -1,0 +1,8 @@
+ADMIN TEMPLATES :=
+
+https://elements.envato.com/web-templates/admin-templates?irgwc=1&clickid=wjYwcKVMoxyORfPwUx0Mo3QWUkiQS-3hex-IxQ0&iradid=298927&utm_campaign=elements_af_78798&iradtype=ONLINE_TRACKING_LINK&irmptype=mediapartner&utm_medium=affiliate&utm_source=impact_radius&mp=Speckyboy%20Design%20Magazine
+
+WEBSITE TEMPLATE:=
+
+https://elements.envato.com/web-templates/email-templates?irgwc=1&clickid=wjYwcKVMoxyORfPwUx0Mo3QWUkiQS-21ex-IxQ0&iradid=298927&utm_campaign=elements_af_78798&iradtype=ONLINE_TRACKING_LINK&irmptype=mediapartner&utm_medium=affiliate&utm_source=impact_radius&mp=Speckyboy%20Design%20Magazine
+https://elements.envato.com/web-templates/site-templates?irgwc=1&clickid=wjYwcKVMoxyORfPwUx0Mo3QWUkiQS7Vhex-IxQ0&iradid=298927&utm_campaign=elements_af_78798&iradtype=ONLINE_TRACKING_LINK&irmptype=mediapartner&utm_medium=affiliate&utm_source=impact_radius&mp=Speckyboy%20Design%20Magazine

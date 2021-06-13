@@ -1,0 +1,101 @@
+font-converter.net
+htmlcolorcodes.com
+django-rest-framework.org
+https://django-book.readthedocs.io/en/latest/chapter14.html
+https://daneden.github.io/animate.css/
+bootsnipp.com
+
+DJANGO PROJECTS IDEAS 
+=====================
+
+https://www.upgrad.com/blog/django-project-ideas-topics-beginners/
+
+
+PERMISSION AND LOGIN DECORATOR
+==============================
+
+EXAMPLE APP VIEWS MAKE THIS FUNCTION AND THE HTML FILE
+
+
+
+EXAMPLE APP VIEWS.PY
+
+from django.contrib.auth.decorators import login_required, permission_required
+
+def handler403(request, exception):
+    return render(request, 'example/403.html', locals())
+
+
+@login_required(login_url='/login/')
+@permission_required('example.view_client', login_url='/login/', raise_exception=True)
+def viewclient(request):
+    clist = Client.objects.all()
+    context = {'clist':clist}
+    return render(request,'baseapp/client.html',context)
+
+CUSTOM MODELS
+
+===========================
+
+from django.db import models
+
+class productcategory(models.Model):
+    category = models.CharField(max_length=75, help_text='Product Category', unique=True, error_messages={
+        "unique": "The Product Category Field you entered is not unique."
+    })
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_edited = models.DateTimeField(auto_now=True)
+    notes = models.TextField(null=True,blank=True,help_text='Notes')
+
+    def __str__(self):
+        return self.category
+
+class product(models.Model):
+    productname = models.CharField(max_length=75, help_text='Product Name', unique=True, error_messages={
+        "unique": "The Product Name Field you entered is not unique."
+    })
+    prouctdescription = models.CharField(max_length=120, help_text= 'Product Descrition')
+    rate = models.DecimalField(max_digits=7,decimal_places=2,help_text = 'Product Rate')
+    category = models.ForeignKey(productcategory,on_delete=models.CASCADE)
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_edited = models.DateTimeField(auto_now=True)
+    notes = models.TextField(null=True, blank=True, help_text='Notes')
+
+    def __str__(self):
+        return self.productname
+
+class Client(models.Model):
+    firstname = models.CharField(max_length=35,help_text='First Name')
+    lastname = models.CharField(max_length=35,help_text='Last Name')
+
+    def __str__(self):
+        return self.firstname + ' ' + self.lastname
+
+
+PRODUCT URLS
+===================
+
+https://www.aliexpress.com/item/4000370493634.html?spm=2114.12057483.0.0.b1108dd5sDmBEC
+https://www.aliexpress.com/i/4000370493634.html?spm=2114.12057483.0.0.6fb2bfe2XzByrx
+https://www.aliexpress.com/popular/sexy-school-uniform-for-women.html
+
+
+INSPIRATION WEBSITES
+======================
+
+https://www.templatemonster.com/demo/53779.html?aff=wptemplate
+
+
+
+DJANGO HOSTING WEBSITE 
+=======================
+
+webhostpython.com
+
+
+WEBSITE DEVELOPMENT
+======================
+
+https://tailwindcss.com/
+https://mertjf.github.io/tailblocks/
+framer.com

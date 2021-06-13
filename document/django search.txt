@@ -1,0 +1,11 @@
+query = request.GET.get('q')
+    if query:
+        table_list = BookBorrowStudent.objects.filter(
+            Q(id__icontains=query) | Q(book__title__icontains=query) | Q(standard__standard__icontains=query) | Q(section__section__icontains=query) | Q(student__first_Name__icontains=query) | Q(student__last_Name__icontains=query) | Q(status__icontains=query) | Q(return_Status__icontains=query) | Q(borrow_Date__icontains=query) | Q(return_Date__icontains=query) | Q(date_edited__icontains=query) | Q(date_created__icontains=query) | Q(added_By__icontains=query) | Q(edited_By__icontains=query)).distinct().order_by('-id')
+
+
+
+<option value="">---------</option>
+{% for student in students %}
+<option value="{{ student.pk }}">{{ student.first_Name }} {{ student.last_Name }}</option>
+{% endfor %}

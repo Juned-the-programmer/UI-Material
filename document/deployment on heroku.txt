@@ -1,0 +1,64 @@
+FIRSTLY IMPORT "djnago-heroku"
+
+ADD THIS TO THE setting.py at last
+====================================
+
+import django_heroku
+
+STATIC_ROOT = os.path.join(BASE_DIR, "live-static-files", "static-root")
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+MEDIA_ROOT = os.path.join(BASE_DIR, "live-static-files", "media-root")
+
+django_heroku.settings(locals())
+
+ADD MIDDLEWEAR
+======================================
+
+'whitenoise.middleware.WhiteNoiseMiddleware',
+
+
+THEN CREATE procfile
+===============================
+
+web: gunicorn djangotest.wsgi
+
+THEN CREATE requirements.txt file
+==================================
+
+pip freeze > requirements.txt
+
+
+THEN TYPE IN TERMINAL
+==========================
+
+python manage.py collectstatic
+
+THEN LOGIN INTO HEROKU
+=========================
+
+heroku login
+
+intialize git
+===============
+
+git init
+heroku git:remote -a todojuned
+git add .
+git commit -am "make it better"
+
+#disable collectstatic
+heroku config:set DISABLE_COLLECTSTATIC=1
+
+#enable collectstatic (if needed)
+heroku config:set DISABLE_COLLECTSTATIC=0
+
+
+git push heroku master
+
+
+AFTER DEPLOYING THE PROJCET 
+==============================
+
+heroku run python manage.py migrate
+
+heroku run python manage.py createsuperuser
